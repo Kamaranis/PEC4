@@ -22,15 +22,25 @@ Ejemplo de uso:
 import pandas as pd
 def calculo_dias_emision(df):
     """
-    Calcula el número de días que cada serie ha estado en emisión y devuelve los 10 registros con mayor tiempo de emisión.
+    Calcula el número de días que cada serie ha estado 
+    en emisión y devuelve los 10 registros con mayor 
+    tiempo de emisión.
 
     Args:
-        df (pd.DataFrame): DataFrame que contiene las columnas 'first_air_date' y 'last_air_date'.
+        df (pd.DataFrame): \
+            DataFrame que contiene las columnas 'first_air_date'
+            y 'last_air_date'.
 
     Returns:
-        pd.DataFrame: DataFrame original con las columnas 'first_air_date' y 'last_air_date' convertidas a datetime.
-        pd.DataFrame: DataFrame con los 10 registros con mayor tiempo de emisión validos para el calculo.
-        pd.DataFrame: DataFrame con los 10 registros con mayor tiempo de emisión ordenados de manera descendente.
+        pd.DataFrame: \
+            DataFrame original con las columnas 'first_air_date'
+            y 'last_air_date' convertidas a datetime.
+        pd.DataFrame: \
+            DataFrame con los 10 registros con mayor 
+            tiempo de emisión validos para el calculo.
+        pd.DataFrame: \
+            DataFrame con los 10 registros con mayor tiempo 
+            de emisión ordenados de manera descendente.
     """
     # Convertimos las columnas 'first_air_date' y 'last_air_date' a datetime
     df['first_air_date'] = pd.to_datetime(df['first_air_date'], format='%Y-%m-%d', errors='coerce')
@@ -44,7 +54,9 @@ def calculo_dias_emision(df):
     # Convertimos 'air_days' a entero
     df_valid['air_days'] = df_valid['air_days'].astype(int)
 
-    # Ordenamos el DataFrame por 'air_days' de manera descendente y muestra los primeros 10 registros
+    # Ordenamos el DataFrame por 'air_days'
+    #de manera descendente y
+    # muestra los primeros 10 registros
     top_10_longest_airing = df_valid.sort_values(by='air_days', ascending=False).head(10)
-    
+
     return df, df_valid, top_10_longest_airing

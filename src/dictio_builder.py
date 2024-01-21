@@ -12,14 +12,17 @@ Funciones:
         Crea un diccionario ordenado con el nombre de la serie 
         como clave y la dirección web completa del póster como valor.
 
-Ejemplos de uso y aplicaciones de este módulo incluyen la creación de diccionarios para el manejo eficiente de datos en aplicaciones 
-de análisis de datos y la preparación de datos para visualizaciones o procesamientos adicionales.
+Ejemplos de uso y aplicaciones de este módulo incluyen 
+la creación de diccionarios para el manejo eficiente de 
+datos en aplicaciones 
+de análisis de datos y la preparación de 
+datos para visualizaciones o procesamientos 
+adicionales.
 """
-
 import csv
 import time
-import src.rutas_csv as r_csv
 import pandas as pd
+import src.rutas_csv as r_csv
 
 def integrar_csv_en_diccionario():
     """
@@ -42,7 +45,8 @@ def integrar_csv_en_diccionario():
         float: Tiempo de procesamiento en segundos, 
         indicando cuánto tardó la operación.
     """
-    lista_rutas_csv = r_csv.leer_rutas_csv() # utilizamos la funcion leer_rutas_csv del modulo rutas_csv
+    # utilizamos la funcion leer_rutas_csv del modulo rutas_csv
+    lista_rutas_csv = r_csv.leer_rutas_csv()
     inicio = time.time() # tiempo de inicio
     diccionario_combinado = {} # inicializamos el diccionario combinado
 
@@ -85,7 +89,8 @@ def crear_diccionario_series(df):
 
     # Sustituimos los NaN y cadenas vacías con "NOT AVAILABLE"
     df_copy['homepage'] = df_copy['homepage'].fillna("NOT AVAILABLE").replace("", "NOT AVAILABLE")
-    df_copy['poster_path'] = df_copy['poster_path'].fillna("NOT AVAILABLE").replace("", "NOT AVAILABLE")
+    df_copy['poster_path'] = \
+        df_copy['poster_path'].fillna("NOT AVAILABLE").replace("", "NOT AVAILABLE")
 
     # Combinamos 'homepage' y 'poster_path'
     df_copy['full_poster_url'] = df_copy['homepage'] + df_copy['poster_path']

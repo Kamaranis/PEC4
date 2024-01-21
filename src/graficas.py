@@ -11,8 +11,9 @@ tipos y géneros.
 Funciones:
     grafico_series_anyo: Genera un gráfico de barras que muestra 
     el número de series por año de inicio.
-    grafico_series_por_decada_y_tipo: Crea un gráfico de líneas que representa el número de series de cada categoría de 'type' 
-    producidas en cada década desde 1940.
+    grafico_series_por_decada_y_tipo: Crea un gráfico de 
+    líneas que representa el número de series de cada categoría 
+    de 'type' producidas en cada década desde 1940.
     grafico_series_por_genero: Muestra un gráfico circular del 
     número de series por género y el porcentaje respecto al total, 
     agrupando los géneros menos representativos en "Other".
@@ -27,10 +28,12 @@ import pandas as pd
 # Función para mostrar un gráfico de barras del número de series por año de inicio
 def grafico_series_anyo(df):
     """
-    Muestra un gráfico de barras del número de series por año de inicio.
+    Muestra un gráfico de barras del número de series 
+    por año de inicio.
 
     Args:
-        df (pd.DataFrame): DataFrame que contiene los datos de las series, incluyendo la fecha de inicio.
+        df (pd.DataFrame): DataFrame que contiene los datos de 
+        las series, incluyendo la fecha de inicio.
     """
     # Establecemos la fecha de inicio como datetime
     df['first_air_date'] = pd.to_datetime(df['first_air_date'], errors='coerce')
@@ -58,11 +61,11 @@ def grafico_series_anyo(df):
     plt.ylabel('Número de series')
 
     # Rotamos las etiquetas del eje x
-    plt.xticks(rotation=45)  # Rotamos las etiquetas en un ángulo de 45 grados para que no se superpongan
-
+    # Rotamos 45 grados para que no se superpongan
+    plt.xticks(rotation=45)
     # Ajustamos la escala de la cuadrícula en el eje y
-    plt.yticks(range(0, max(series_por_ano)+1, 1000))  # Establecemos las marcas en el eje y cada 1000 unidades
-
+    # Establecemos las marcas en el eje y cada 1000 unidades
+    plt.yticks(range(0, max(series_por_ano)+1, 1000))
     # Agregamos cuadrícula al eje y
     plt.grid(True, axis='y')
 
@@ -72,10 +75,14 @@ def grafico_series_anyo(df):
 
 def grafico_series_por_decada_y_tipo(df):
     """
-    Muestra un gráfico de líneas del número de series de cada categoría de 'type' producidas en cada década desde 1940.
+    Muestra un gráfico de líneas del número de 
+    series de cada categoría de 'type' producidas 
+    en cada década desde 1940.
 
     Args:
-        df (pd.DataFrame): DataFrame que contiene los datos de las series, incluyendo la fecha de inicio y el tipo.
+        df (pd.DataFrame): \
+            DataFrame que contiene los datos de las series, 
+            incluyendo la fecha de inicio y el tipo.
     """
     # Convertimos 'first_air_date' a datetime
     df['first_air_date'] = pd.to_datetime(df['first_air_date'], errors='coerce')
@@ -98,9 +105,11 @@ def grafico_series_por_decada_y_tipo(df):
     # Dibujamos el gráfico de líneas
     series_por_decada_y_tipo.plot(kind='line', ax=ax)
 
-    # Obtenemos el máximo valor en el eje y para establecer el límite superior
+    # Obtenemos el máximo valor en el eje y para establecer
+    # el límite superior
     max_value = series_por_decada_y_tipo.max().max()
-    ax.set_ylim(0, max_value + (2500 - max_value % 2500))  # Ajustamos el límite superior para que sea múltiplo de 2500
+    # Ajustamos el límite superior para que sea múltiplo de 2500
+    ax.set_ylim(0, max_value + (2500 - max_value % 2500))
 
     # Establecemos las marcas (ticks) del eje y
     ax.set_yticks(range(0, int(max_value) + 2500, 2500))
@@ -138,9 +147,11 @@ def grafico_series_por_genero(df):
      # Creamos el gráfico circular
     plt.figure(figsize=(12, 12))  # Adaptamos el tamaño para que se lean los valores
     explode = [0.1 if conteo_generos.iloc[i] / total_series >= 0.05 else 0 for i in range(len(conteo_generos))]
-    
+
     # Especificamos las etiquetas y los porcentajes
-    labels = [f'{genre}: {percent:.1f}%' for genre, percent in zip(conteo_generos.index, (conteo_generos / total_series * 100))]
+    labels = \
+        [f'{genre}: \
+         {percent:.1f}%' for genre, percent in zip(conteo_generos.index, (conteo_generos / total_series * 100))]
     conteo_generos.plot(kind='pie', startangle=140, explode=explode, labels=labels, textprops={'fontsize': 8})
 
     # Agregamos título
@@ -151,4 +162,3 @@ def grafico_series_por_genero(df):
 
     # Mostramos el gráfico
     plt.show()
-    

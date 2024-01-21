@@ -18,8 +18,10 @@ Funciones:
         Extrae series que incluyen el idioma japonés, mostrando 
         detalles específicos como nombres y productoras.
 
-Estas son útiles para explorar tendencias y patrones en la producción de series de televisión, habilitando la realizacion de analisis detallados 
-sobre la diversidad linguistica, tematica y la dinamica de produccian a lo largo del tiempo.
+Estas son útiles para explorar tendencias y patrones en la 
+producción de series de televisión, habilitando la realizacion 
+de analisis detallados sobre la diversidad linguistica, 
+tematica y la dinamica de produccian a lo largo del tiempo.
 """
 
 import pandas as pd
@@ -42,10 +44,9 @@ def filtrar_series_por_idioma_y_palabras(df, idioma, palabras):
 
     Returns:
         pd.DataFrame: \
-            DataFrame filtrado con los nombres de las series que cumplen los criterios.
+            DataFrame filtrado con los nombres de las series que 
+            cumplen los criterios.
     """
-    idioma: str = 'en'
-    palabras: list = ['mystery', 'crime']
     # Filtramo por idioma originaln y hacemos una copia del DataFrame independiente
     df_filtrado = df[df['original_language'] == idioma].copy()
 
@@ -53,7 +54,8 @@ def filtrar_series_por_idioma_y_palabras(df, idioma, palabras):
     df_filtrado['overview'] = df_filtrado['overview'].str.lower()
 
     # Filtramos por palabras en el resumen
-    palabras_regex = '|'.join(palabras)  # Creamos una expresión regular para buscar cualquiera de las palabras
+    # Creamos una expresión regular para buscar cualquiera de las palabras
+    palabras_regex = '|'.join(palabras)
     df_filtrado = df_filtrado[df_filtrado['overview'].str.contains(palabras_regex, na=False)]
 
     return df_filtrado['name']
@@ -79,7 +81,7 @@ def filtrar_series_2023_canceladas(df, year='2023', status='canceled'):
     """
     # Convertimos 'first_air_date' a datetime
     df['first_air_date'] = pd.to_datetime(df['first_air_date'], errors='coerce')
-    
+
     # Filtramos por año y status y hacemos una copia del DataFrame independiente
      # Aseguramos que el año extraído sea igual al año especificado y que el estado sea 'canceled'
     df_filtrado = df[(df['first_air_date'].dt.year == int(year)) &

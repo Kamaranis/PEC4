@@ -108,9 +108,12 @@ for name, url in SERIES_DICT.items():
         break
 
 input("\nEnter para mostrar los 10 primeros registros filtrados por idioma y keywords\n")
+# Creamos variables para filtrar por idioma y palabras clave:
+idioma: str = 'en'
+palabras: list = ['mystery', 'crime']
 
 # Mostramos los 10 primeros registros filtrados:
-dataframe_filtrado = fsp(dataframe)
+dataframe_filtrado = fsp(dataframe, idioma, palabras)
 # Mostramos los 10 primeros registros filtrados:
 print(dataframe_filtrado.head(10))
 
