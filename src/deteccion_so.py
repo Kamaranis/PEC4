@@ -2,8 +2,10 @@
 """
 deteccion_so.py
 
-Este módulo dota de capacidad para detectar el sistema operativo en el que se está ejecutando el script.
-Se utiliza para determinar cómo manejar archivos comprimidos en diferentes sistemas operativos.
+Este módulo dota de capacidad para detectar el sistema operativo 
+en el que se está ejecutando el script.
+Se utiliza para determinar cómo manejar archivos comprimidos 
+en diferentes sistemas operativos.
 
 Funciones:
     detectar_sistema_operativo(): Devuelve el nombre del sistema operativo.

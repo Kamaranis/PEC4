@@ -1,12 +1,19 @@
 # dictio_builder
 """
-Este módulo `dictio_builder` proporciona funcionalidades para crear diccionarios a partir de datos extraídos de archivos CSV y DataFrames de pandas. 
+Este módulo `dictio_builder` proporciona funcionalidades
+para crear diccionarios a partir de datos 
+extraídos de archivos CSV y DataFrames de pandas. 
 
 Funciones:
-    - integrar_csv_en_diccionario: Lee archivos CSV desde rutas especificadas y los combina en un único diccionario utilizando 'id' como clave.
-    - crear_diccionario_series: Crea un diccionario ordenado con el nombre de la serie como clave y la dirección web completa del póster como valor.
+    - integrar_csv_en_diccionario: \
+        Lee archivos CSV desde rutas especificadas y los combina 
+        en un único diccionario utilizando 'id' como clave.
+    - crear_diccionario_series: \
+        Crea un diccionario ordenado con el nombre de la serie 
+        como clave y la dirección web completa del póster como valor.
 
-Ejemplos de uso y aplicaciones de este módulo incluyen la creación de diccionarios para el manejo eficiente de datos en aplicaciones de análisis de datos y la preparación de datos para visualizaciones o procesamientos adicionales.
+Ejemplos de uso y aplicaciones de este módulo incluyen la creación de diccionarios para el manejo eficiente de datos en aplicaciones 
+de análisis de datos y la preparación de datos para visualizaciones o procesamientos adicionales.
 """
 
 import csv
@@ -16,18 +23,24 @@ import pandas as pd
 
 def integrar_csv_en_diccionario():
     """
-    Lee varios archivos CSV y los combina en un único diccionario utilizando 'id' como clave.
+    Lee varios archivos CSV y los combina en un único diccionario 
+    utilizando 'id' como clave.
 
-    Esta función itera sobre una lista de rutas a archivos CSV, lee cada archivo y combina sus contenidos en un diccionario.
-    Cada fila de los archivos CSV se agrega al diccionario con el valor de 'id' como clave única. Si un 'id' ya existe en el diccionario,
-    los datos se actualizan con la nueva información encontrada.
+    Esta función itera sobre una lista de rutas a archivos CSV, 
+    lee cada archivo y combina sus contenidos en un diccionario.
+    Cada fila de los archivos CSV se agrega al diccionario con 
+    el valor de 'id' como clave única. Si un 'id' ya existe en 
+    el diccionario, los datos se actualizan con 
+    la nueva información encontrada.
 
     Args:
         lista_rutas_csv (list): Lista de rutas a los archivos CSV.
 
     Returns:
-        dict: Diccionario combinado que contiene los datos de todos los archivos CSV leídos.
-        float: Tiempo de procesamiento en segundos, indicando cuánto tardó la operación.
+        dict: Diccionario combinado que contiene los datos de todos 
+        los archivos CSV leídos.
+        float: Tiempo de procesamiento en segundos, 
+        indicando cuánto tardó la operación.
     """
     lista_rutas_csv = r_csv.leer_rutas_csv() # utilizamos la funcion leer_rutas_csv del modulo rutas_csv
     inicio = time.time() # tiempo de inicio
@@ -51,17 +64,21 @@ def integrar_csv_en_diccionario():
 
 def crear_diccionario_series(df):
     """
-    Crea un diccionario ordenado con el nombre de la serie como clave y la dirección web del póster como valor.
+    Crea un diccionario ordenado con el nombre de la serie como clave 
+    y la dirección web del póster como valor.
 
     Esta función procesa un DataFrame que contiene las columnas 'name', 'homepage', y 'poster_path'.
-    Para cada serie, combina 'homepage' y 'poster_path' para formar una URL completa con el póster.
-    Si 'homepage' o 'poster_path' están vacíos o son NaN, se reemplazan con "NOT AVAILABLE".
+    Para cada serie, combina 'homepage' y 'poster_path' para formar 
+    una URL completa con el póster.
+    Si 'homepage' o 'poster_path' están vacíos o son NaN, 
+    se reemplazan con "NOT AVAILABLE".
 
     Args:
         df (pd.DataFrame): DataFrame que contiene las columnas 'name', 'homepage' y 'poster_path'.
 
     Returns:
-        dict: Diccionario ordenado con nombres de series y URLs de pósters.
+        dict: Diccionario ordenado con nombres de series y URLs de 
+        pósters.
     """
     # Creamos una copia del DataFrame para evitar modificar el original
     df_copy = df.copy()

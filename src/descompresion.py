@@ -2,7 +2,11 @@
 """
 descompresion.py
 
-Este módulo proporciona funcionalidades para descomprimir archivos en varios formatos (zip, tar.gz, rar) en sistemas Unix y Windows. Utiliza las bibliotecas integradas de Python y herramientas de línea de comandos para manejar diferentes formatos de archivos comprimidos.
+Este módulo proporciona funcionalidades para descomprimir archivos en 
+varios formatos (zip, tar.gz, rar) en sistemas Unix y Windows. 
+Utiliza las bibliotecas integradas de Python y herramientas de 
+línea de comandos para manejar diferentes formatos de archivos 
+comprimidos.
 
     Dependencias:
     - zipfile: Para manejar archivos zip.

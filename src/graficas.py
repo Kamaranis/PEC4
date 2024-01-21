@@ -1,16 +1,25 @@
 # graficas.py
 """
-Este módulo contiene funciones para la visualización de datos relacionados con series de televisión. 
-Utiliza la biblioteca matplotlib para generar gráficos que facilitan la interpretación de las tendencias 
-y patrones en los datos de series, como la distribución de series a lo largo de los años, por décadas, 
+Este módulo contiene funciones para la visualización de datos 
+relacionados con series de televisión. 
+Utiliza la biblioteca matplotlib para generar gráficos que 
+facilitan la interpretación de las tendencias 
+y patrones en los datos de series, como la distribución de 
+series a lo largo de los años, por décadas, 
 tipos y géneros.
 
 Funciones:
-    grafico_series_anyo: Genera un gráfico de barras que muestra el número de series por año de inicio.
-    grafico_series_por_decada_y_tipo: Crea un gráfico de líneas que representa el número de series de cada categoría de 'type' producidas en cada década desde 1940.
-    grafico_series_por_genero: Muestra un gráfico circular del número de series por género y el porcentaje respecto al total, agrupando los géneros menos representativos en "Other".
+    grafico_series_anyo: Genera un gráfico de barras que muestra 
+    el número de series por año de inicio.
+    grafico_series_por_decada_y_tipo: Crea un gráfico de líneas que representa el número de series de cada categoría de 'type' 
+    producidas en cada década desde 1940.
+    grafico_series_por_genero: Muestra un gráfico circular del 
+    número de series por género y el porcentaje respecto al total, 
+    agrupando los géneros menos representativos en "Other".
 
-Estas tipo de graficas son esenciales para el análisis exploratorio de datos, habilitandonos a identificar tendencias, patrones y anomalías en la producción y categorización de series de televisión.
+Estas tipo de graficas son esenciales para el análisis exploratorio 
+de datos, habilitandonos a identificar tendencias, patrones
+y anomalías en la producción y categorización de series de televisión.
 """
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -142,3 +151,4 @@ def grafico_series_por_genero(df):
 
     # Mostramos el gráfico
     plt.show()
+    

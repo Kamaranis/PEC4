@@ -9,8 +9,8 @@ Utiliza pandas para leer y fusionar archivos CSV basándose en una columna comú
 Funciones:
     integrar_csv_en_dataframe(): Lee y combina archivos CSV en un único DataFrame.
 """
-import pandas as pd
 import time
+import pandas as pd
 import src.rutas_csv
 
 

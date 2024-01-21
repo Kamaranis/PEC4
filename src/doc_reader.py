@@ -1,3 +1,10 @@
+# doc_reader.py
+"""
+Este modulo contiene una unica funcion que 
+Habilita la lectura de archivos de 
+texto desde la línea de comandos.
+"""
+
 def mostrar_texto(ruta_archivo_md: str):
     """
     Lee y muestra el contenido de un archivo de texto.

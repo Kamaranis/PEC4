@@ -22,6 +22,6 @@ def leer_rutas_csv():
                 ruta_archivo = os.path.join(carpeta, archivo)
                 lista_csv.append(ruta_archivo)
     else:
-        print(f"La carpeta 'data' no existe o no es un directorio.")
+        print("La carpeta 'data' no existe o no es un directorio.")
 
     return lista_csv

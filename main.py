@@ -68,7 +68,7 @@ print(f"\nDataframe combinado: {dataframe}")
 # print(dataframe)
 print(f"\nTiempo de procesamiento: {tiempo_procesamiento} segundos")
 
-input("Presiona Enter para continuar con la creando diccionarios...")
+input("Presiona Enter para continuar con la creacion de diccionarios...")
 
 # Creamos diccionario y calculamos tiempo:
 diccionario, tiempo_procesamiento_dict = src.dictio_builder.integrar_csv_en_diccionario()
@@ -95,16 +95,13 @@ dataframe, df_valid, top_10_series = src.dias_emision.calculo_dias_emision(dataf
 print(top_10_series[['original_name', 'name', 'air_days']])
 
 # Creamos un diccionario con las series y sus URLs de pósters:
-series_dict = src.dictio_builder.crear_diccionario_series(df_valid)
-
-# Creamos un diccionario con las series y sus URLs de pósters:
-series_dict = src.dictio_builder.crear_diccionario_series(df_valid)
+SERIES_DICT = src.dictio_builder.crear_diccionario_series(df_valid)
 
 input("\nPulsa para mostrar los primeros 5 registros del diccionario...\n")
 
 # Imprimimos los primeros 5 registros del diccionario
 i = 0  # Contador para limitar el número de registros mostrados
-for name, url in series_dict.items():
+for name, url in SERIES_DICT.items():
     print(f"Nombre de la serie: {name}, URL del póster: {url}")
     i += 1
     if i >= 5:
@@ -125,7 +122,7 @@ dataframe_filtrado = fsc(dataframe)
 # Mostramos las series de 2023 que han sido canceladas:
 print(dataframe_filtrado.head(20))
 
-input("\npulsa Enter para mostrar las series japonesas")
+input("\npulsa Enter para mostrar series japonesas")
 
 # Filtramos las series japonesas:
 dataframe_filtrado = fsj(dataframe)
@@ -142,11 +139,11 @@ input("\n presiona Enter para mostrar una grafica de peliculas por decada y tipo
 gsdt(dataframe)
 
 # Mostramos una gráfica circular de géneros de series:
-input("\n presiona Enter para mostrar una grafica circular de generos de series")
+input("\nPresiona Enter para mostrar una gráfica circular de géneros de series")
 gsg(dataframe)
 
 # Respuesta a la pregunta 1.4
-input("\nPresiona Enter para continuar redactado de conclusiones\n")
+input("\nPresiona Enter para mostrar el redactado de conclusiones\n")
 
 src.doc_reader.mostrar_texto("docs/5_conclusiones.txt")
 
