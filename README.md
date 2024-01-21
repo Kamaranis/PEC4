@@ -26,6 +26,13 @@ En este proyecto de ciencia de datos se realiza un análisis de un conjunto de d
 - `tests/`: Pruebas unitarias para los módulos.
 - `docs/`: Documentación adicional y archivos Markdown para respuestas y análisis.
 
+## Requisitos
+```
+Python 3.10.1
+pandas
+matplotlib
+```
+
 ## Instalación
 Para instalar las dependencias del proyecto, ejecute:
 
@@ -37,6 +44,9 @@ pip install -r requirements.txt
 ```
 python main.py
 ```
+El programa solo admite archivos comprimidos con extensiones .zip, rar y .gz. Si se desea ejecutar con otros tipos de archivos, se debe modificar el código fuente. Asimismo depende del sisrtema operativo, pueden darse problemas para descomprimir archivos .rar. en linux y viceversa con archivos .gz en windows.
+Se requeriria instalar el paquete unrar para linux y el paquete gzip para windows, asi como tener instalado winrar en windows en el directorio pro defecto
+
 ## Contribuciones
 Si desea contribuir a [este proyecto](https://github.com/Kamaranis/PEC4), por favor envíe un pull request. Todas las contribuciones son bienvenidas.
 
