@@ -1,0 +1,49 @@
+INFORME FINAL DEL ANALISIS DE SERIES DE TELEVISION
+
+INTRODUCCION
+Este proyecto se ha centrado en el análisis de un conjunto de datos de series de televisión, con el objetivo de extraer patrones 
+significativos y tendencias relevantes en la industria del entretenimiento. 
+A través de una serie de ejercicios detallados en la PEC 4, hemos podido 
+explorar diversos aspectos de la informacion para extrear dadots, como la popularidad, la duración de emisión, los géneros predominantes 
+y las tendencias a lo largo del tiempo, pero cabe destacar que era posible ir mas alla y explorar otros aspectos de la informacion como
+la diversidad de idiomas, la diversidad de generos, la diversidad de paises, etc.
+
+HERRAMIENTAS Y LIBRERIAS UTILIZADAS
+El análisis se ha llevado a cabo utilizando Python, un lenguaje de programación que es considerado 'la lingua franca' de la ciencia de datos.
+Algunas librerías que han sido fundamentales en este proyecto:
+
+Pandas: Una librería de Python para la manipulación y análisis de datos. Ha sido esencial para la carga, limpieza y transformación de los conjuntos 
+de datos en formatos estructurados como DataFrames.
+
+Matplotlib: Para la visualización de datos, ha permitido la creación de gráficos y diagramas para representar visualmente los hallazgos del análisis, 
+incluyendo gráficos de barras, líneas y circulares.
+
+Python Standard Library: Se han utilizado varias funciones integradas de Python para operaciones como la lectura y escritura de archivos, 
+manipulación de cadenas y control de flujo.
+
+Sys: Esta librería ha sido utilizada para interactuar con el sistema operativo, permitiendo operaciones como la salida del programa bajo ciertas condiciones.
+
+INSIGHTS
+A través del análisis realizado, se han obtenido varias conclusiones significativas:
+
+Tendencias de Género: 
+El análisis de los géneros de las series reveló una diversidad en las preferencias de los espectadores, 
+con ciertos géneros mostrando una mayor prevalencia.
+
+Evolución a lo Largo del Tiempo: 
+Los gráficos de líneas y barras han permitido observar cómo ha evolucionado la producción de series a lo largo de las décadas, 
+destacando cambios significativos en la industria, pero cabe destacar una masiva produccion audiovisual en los ultimos años.
+
+Popularidad y Duración de Emisión: 
+El estudio de la duración de emisión y la popularidad de las series ha proporcionado insights sobre la longevidad y el éxito de las mismas en el mercado.
+
+Diversidad Idiomática: 
+El análisis de las series por idioma original ha ofrecido una perspectiva sobre la diversidad cultural en la producción de series pero cabe destacar que
+la predominancia del idioma ingles es abrumadora.
+
+Otros aspectos relevantes:
+Este proyecto ha demostrado cómo el análisis de datos apoyado por tecnologia de vanguardia, puede ofrecer una comprensión profunda de tendencias y 
+patrones en cualquier campo de interés. 
+Los resultados obtenidos no solo son valiosos para los entusiastas de las series de televisión, sino también para los profesionales de la industria que buscan 
+entender mejor las dinámicas del mercado.
+

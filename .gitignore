@@ -1,0 +1,14 @@
+# Directorios
+pec4Venv/
+pecEnv/
+# Archivos de la cache de python
+__pycache__/
+# Archivos compilados de python
+*.pyc
+# Archivos confg de IDEs
+.vscode/
+.idea/
+
+# Sistemas de archivos
+.DS_Store
+Thumbs.db
