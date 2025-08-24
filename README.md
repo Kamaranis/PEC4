@@ -1,9 +1,7 @@
-UOC. Programacion para la ciencia de datos (PEC4)
+Análisis de Series de Televisión
 ============
 [![Current Version](https://img.shields.io/badge/version-1.0-green.svg)](https://github.com/Kamaranis/PEC4) 
 
-Repositiorio para la PEC4 de la asignatura Programacion para la ciencia de datos del Master en Ciencia de Datos de la UOC en el curso 2023-2024: 
-#### Codigo fuente: https://github.com/Kamaranis/PEC4
 # Análisis de Series de Televisión
 
 En este proyecto de ciencia de datos se realiza un análisis de un conjunto de datos de series de televisión. Utiliza Python para cargar, procesar, filtrar y visualizar datos relacionados con series de televisión, incluyendo géneros, duración de emisión, idiomas y más.
